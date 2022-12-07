@@ -1,0 +1,68 @@
+{
+  "name": "zodenv",
+  "version": "0.0.0-dripip",
+  "repository": "git@github.com:pablodinella/pablodinella/zodenv.git",
+  "author": "Jason Kuhrt",
+  "packageManager": "pnpm@7.11.0",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "src",
+    "build"
+  ],
+  "types": "./build/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./build/cjs/index.d.cts",
+        "default": "./build/cjs/index.cjs"
+      },
+      "import": {
+        "types": "./build/esm/index.d.ts",
+        "default": "./build/esm/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build:toc": "markdown-toc README.md -i --maxdepth 4 && prettier --write README.md",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "lint:check": "eslint . --ext .ts,.tsx --max-warnings 0",
+    "types:check": "pnpm tsc --noEmit",
+    "dev": "pnpm clean && tsc --build --watch tsconfig.cjs.json tsconfig.esm.json",
+    "build": "pnpm clean && pnpm build:cjs && pnpm build:esm",
+    "build:cjs": "ts-node scripts/build-cjs.ts",
+    "build:esm": "pnpm tsc --project tsconfig.esm.json",
+    "test": "vitest",
+    "clean": "rm -rf build node_modules/.cache",
+    "prepack": "pnpm build"
+  },
+  "devDependencies": {
+    "@prisma-labs/prettier-config": "0.1.0",
+    "@swc/core": "1.3.2",
+    "@tsconfig/node14": "1.0.3",
+    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/recommended": "1.0.1",
+    "@types/inquirer": "9.0.1",
+    "@types/node": "18.7.18",
+    "@typescript-eslint/eslint-plugin": "5.38.0",
+    "@typescript-eslint/parser": "5.38.0",
+    "dripip": "0.10.0",
+    "eslint": "8.23.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-deprecation": "1.3.2",
+    "eslint-plugin-only-warn": "1.0.3",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-simple-import-sort": "8.0.0",
+    "eslint-plugin-tsdoc": "0.2.17",
+    "execa": "6.1.0",
+    "fast-glob": "3.2.12",
+    "fs-jetpack": "5.0.0",
+    "markdown-toc": "1.2.0",
+    "prettier": "2.7.1",
+    "ts-node": "10.9.1",
+    "typescript": "4.8.3",
+    "vitest": "0.23.4"
+  }
+}
