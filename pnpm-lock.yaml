@@ -10,6 +10,7 @@ specifiers:
   '@types/node': 18.7.18
   '@typescript-eslint/eslint-plugin': 5.38.0
   '@typescript-eslint/parser': 5.38.0
+  dotenv: ^16.0.3
   dripip: 0.10.0
   eslint: 8.23.1
   eslint-config-prettier: 8.5.0
@@ -26,6 +27,11 @@ specifiers:
   ts-node: 10.9.1
   typescript: 4.8.3
   vitest: 0.23.4
+  zod: ^3.19.1
+
+dependencies:
+  dotenv: 16.0.3
+  zod: 3.19.1
 
 devDependencies:
   '@prisma-labs/prettier-config': 0.1.0
@@ -1111,6 +1117,11 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dripip/0.10.0:
     resolution: {integrity: sha512-FaHkW6uXAa57pJwz+SRxTvTDiybSH9w4PGWXkheoIPNs4HcHM688rfsKzvedoaLvQul4UaAoRr+2CHc7V25biA==}
@@ -3092,3 +3103,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod/3.19.1:
+    resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
+    dev: false
